@@ -1,0 +1,16 @@
+{% extends 'base.html' %}
+
+{% block title %}
+    Registration
+{% endblock %}
+{% block content %}
+    <h1>Registration:</h1>
+    <br>
+    <form method="post">
+        <h3>Login:</h3>
+        <input type="text" name="name" minlength="4" required>
+        <h3>Password:</h3>
+        <input type="password" name="password" maxlength="24" required>
+        <button>Submit</button>
+    </form>
+{% endblock %}
