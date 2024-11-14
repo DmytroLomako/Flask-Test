@@ -4,6 +4,10 @@
 Home
 {% endblock %}
 
+{% block links %}
+    <link rel="stylesheet" href="{{ url_for('home_app.static', filename='home_app/css/home.css') }}">
+{% endblock %}
+
 {% block content %}
     <h1>Home Page</h1>
     <h2>List Users:</h2>
@@ -12,4 +16,14 @@ Home
             <li>{{ user.name }}</li>
         {% endfor %}
     </ul>
+    <div class="block-img">
+        <img src="{{ url_for('home_app.static',filename='home_app/img/img.png') }}" alt="">
+    </div>
+    <form method="post">
+        <h2>Contact Us</h2>
+        <input type="email" name="email" placeholder="email" required>
+        <textarea name="message" placeholder="message" required rows="4" cols="30"></textarea>
+        <button type="submit">Submit</button>
+        <button type="reset">Cancel</button>
+    </form>
 {% endblock %}
