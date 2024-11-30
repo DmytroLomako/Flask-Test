@@ -1,0 +1,42 @@
+*{
+    color: green;
+}
+h1 {
+    color: red;
+}
+#content{
+    width: 100%;
+}
+.product-info {
+    display: flex;
+    flex-direction: column;
+    width: 50%;
+    min-width: 250px;
+    max-width: 500px;
+    border: 2px solid black;
+    justify-content: flex-start;
+    align-items: flex-start;
+    gap: 10px;
+}
+button{
+    height: 50px;
+    width: 200px;
+}
+button:active{
+    background-color: red;
+    transition: transform 0.5s;
+    transform: scale(1.2);
+}
+img{
+    cursor: pointer;
+}
+p{
+    width: 250px;
+}
+p::before{
+    content: 'Tehbskbvkusbkv b,kbsevnskjnve';
+}
+/* img:hover{
+    transition: transform 0.5s 1s;
+    transform: scale(2);
+} */

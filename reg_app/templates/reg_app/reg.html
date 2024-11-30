@@ -3,10 +3,14 @@
 {% block title %}
     Registration
 {% endblock %}
+
+{% block links %}
+    <link rel="stylesheet" href="{{ url_for('reg_app.static',filename='reg_app/css/reg.css') }}">
+{% endblock %}
+
 {% block content %}
-    <h1>Registration:</h1>
-    <br>
     <form method="post">
+        <h1>Registration:</h1>
         <h3>Login:</h3>
         <input type="text" name="name" minlength="4" required>
         <h3>Password:</h3>

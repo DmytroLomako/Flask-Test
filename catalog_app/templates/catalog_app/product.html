@@ -1,0 +1,20 @@
+{% extends 'base.html' %}
+
+{% block title %}
+    Product
+{% endblock %}
+
+{% block links %}
+    <link rel="stylesheet" href="{{ url_for('catalog_app.static',filename='catalog_app/css/product.css') }}">
+{% endblock %}
+
+{% block content %}
+    <h1>Product</h1>
+    <div class="product-info">
+        <button>Buy</button>
+        <img src="{{ url_for('catalog_app.static',filename='catalog_app/img/backpack.jpg') }}">
+        <h2>Backpack - 100$</h2>
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Non harum ipsum perspiciatis molestiae facilis ipsam distinctio deleniti at quisquam veritatis.</p>
+    </div>
+    <h2>end</h2>
+{% endblock %}

@@ -6,3 +6,6 @@ def render_catalog():
         data = json.load(file)
         print(data.values())
     return flask.render_template('catalog_app/catalog.html', products = data.values())
+
+def render_product():
+    return flask.render_template('catalog_app/product.html')

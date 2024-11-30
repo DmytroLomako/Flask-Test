@@ -13,7 +13,7 @@ Catalog
     <div>
         {% for product in products %}
             <div>
-                <h5>{{ product.name }} - {{ product.price }}</h5>
+                <h5><a href="/product/">{{ product.name }}</a> - {{ product.price }}</h5>
                 <p>{{ product.description }}</p>
                 <img src="{{ url_for('catalog_app.static',filename='catalog_app/img/' + product.image_name) }}" alt="">
             </div>
