@@ -1,4 +1,4 @@
-import flask, home_app, reg_app, catalog_app, os
+import flask, os, home_app, reg_app, catalog_app
 import flask_migrate, flask_sqlalchemy
 
 project_shop = flask.Flask(

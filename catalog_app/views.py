@@ -1,11 +1,14 @@
-import flask, json, os
+import flask
+# from .models import Product
 
 def render_catalog():
-    path_to_json = os.path.abspath(__file__ + '/../products.json')
-    with open(path_to_json, 'r') as file:
-        data = json.load(file)
-        print(data.values())
-    return flask.render_template('catalog_app/catalog.html', products = data.values())
+    if flask.request.method == 'POST':
+        name = flask.request.form['name']
+        price = flask.request.form['price']
+        description = flask.request.form['description']
+        print(name, price, description)
+    list_products = []#Product.query.all()
+    return flask.render_template('catalog_app/catalog.html', products = list_products)
 
 def render_product():
     return flask.render_template('catalog_app/product.html')

@@ -19,4 +19,13 @@ Catalog
             </div>
         {% endfor %}
     </div>
+    <div class="create-product">
+        <h1>Create Product</h1>
+        <form action="POST">
+            <input type="text" placeholder="name" name="name">
+            <input type="number" placeholder="price" name="price">
+            <textarea name="description" placeholder="description" id=""></textarea>
+            <button>Save product</button>
+        </form>
+    </div>
 {% endblock %}
