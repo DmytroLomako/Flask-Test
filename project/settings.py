@@ -1,8 +1,8 @@
-import flask, os, home_app, reg_app, catalog_app
+import flask, os
 import flask_migrate, flask_sqlalchemy
 
 project_shop = flask.Flask(
-    import_name = 'shop',
+    import_name = 'project',
     template_folder = 'templates',
     instance_path = os.path.abspath(__file__ + '/../../instance')
 )
