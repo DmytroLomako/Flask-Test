@@ -10,21 +10,22 @@ Catalog
 
 {% block content %}
     <h1>Catalog</h1>
-    <div>
+    <div class="list-products">
         {% for product in products %}
-            <div>
-                <h5><a href="/product/">{{ product.name }}</a> - {{ product.price }}</h5>
-                <p>{{ product.description }}</p>
-                <img src="{{ url_for('catalog_app.static',filename='catalog_app/img/' + product.image_name) }}" alt="">
-            </div>
+            <form class="product" method="post">
+                <input type="hidden" name="id-product" value="{{ product.id }}">
+                <img src="{{ url_for('catalog_app.static',filename='catalog_app/img/products/' + product.image + '.png') }}" alt="">
+                <h5><a href="/product/">{{ product.name }}</a> - {{ product.price }} <button>Видалити</button></h5>
+            </form>
         {% endfor %}
     </div>
     <div class="create-product">
         <h1>Create Product</h1>
-        <form action="POST">
+        <form method="POST" enctype="multipart/form-data">
             <input type="text" placeholder="name" name="name">
             <input type="number" placeholder="price" name="price">
             <textarea name="description" placeholder="description" id=""></textarea>
+            <input type="file" placeholder="image" accept="image/*" name="image">
             <button>Save product</button>
         </form>
     </div>
