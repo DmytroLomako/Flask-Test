@@ -9,12 +9,25 @@
 {% endblock %}
 
 {% block content %}
-    <h1>Product</h1>
-    <div class="product-info">
-        <button>Buy</button>
-        <img src="{{ url_for('catalog_app.static',filename='catalog_app/img/products/' + product.image + '.png') }}">
-        <h2>Backpack - 100$</h2>
-        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Non harum ipsum perspiciatis molestiae facilis ipsam distinctio deleniti at quisquam veritatis.</p>
+    <img src="{{ url_for('catalog_app.static',filename='catalog_app/img/products/' + product.image + '.png') }}">
+    <h2>{{ product.name }} - {{ product.price }}$</h2>
+    <button>Buy</button>
+    <p>{{ product.description }}</p>
+    <div class="reviews">
+        <h1>Reviews:</h1>
+        {% for review in product.reviews %}
+            <h2>Rating: {{ review.raiting }}★</h2>
+            <h5>{{ review.text }}</h5>
+            <hr>
+        {% endfor %}
+        <h1>Create Review:</h1>
+        <form method="post" class="create-review">
+            <h4>Review:</h4>
+            <textarea name="review" id=""></textarea>
+            <h4>Rating:</h4>
+            <input type="number" name="rating" id="" min="0" max="5">
+            <button>submit</button>
+        </form>
+
     </div>
-    <h2>end</h2>
 {% endblock %}

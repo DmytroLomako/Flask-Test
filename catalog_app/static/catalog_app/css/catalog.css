@@ -1,5 +1,6 @@
 img {
-    width: 200px;
+    max-width: 100%;
+    max-height: 100%;
 }
 #content{
     width: 100%;
@@ -28,9 +29,6 @@ p {
 h5{
     font-size: 20px;
     margin: 0;
-}
-img:nth-child(1){
-    border: 5px red solid;
 }
 .create-product{
     display: flex;
@@ -63,4 +61,33 @@ form button{
     width: 30%;
     height: 40px;
 
+}
+#image-size-handler{
+    width: 200px;
+    height: 200px;
+    padding: 5px;
+    border: 1px solid gray;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.product-info{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+.button-trash{
+    width: 30px;
+    height: 30px;
+    background-color: white;
+    border: none;
+    display: flex;
+    padding-top: 2px;
+}
+.button-trash:hover{
+    cursor: pointer;
+}
+svg{
+    width: 20px;
+    height: 20px;
 }

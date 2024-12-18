@@ -14,7 +14,15 @@
         <header class="links">
             <a href="/">HOME</a>
             <a href="/catalog/">CATALOG</a>
-            <a href="/reg/">REGISTARTION</a>
+            <div class="user">
+                {% if account %}
+                    <h3>{{ username }}</h3>
+                    <a href="/logout/">LOGOUT</a>
+                {% else %}
+                    <a href="/reg/">REGISTARTION</a>
+                    <a href="/auth/">AUTHORIZATION</a>
+                {% endif %}
+            </div>
         </header>
         <div id="content">
             {% block content %}

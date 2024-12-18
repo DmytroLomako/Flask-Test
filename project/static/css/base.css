@@ -36,13 +36,13 @@ a {
     padding: 25px;
     box-sizing: border-box;
 }
-img {
-    width: 250px;
-    height: 250px;
-}
 form {
     width: 70%;
 }
 #content {
     margin-left: 250px;
+}
+.user{
+    position: absolute;
+    bottom: 10px;
 }
