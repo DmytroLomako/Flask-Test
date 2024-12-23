@@ -32,3 +32,8 @@ def render_log():
 def render_logout():
     flask_login.logout_user()
     return flask.redirect('/')
+
+def render_user():
+    if current_user.is_authenticated:
+        return flask.render_template('reg_app/user.html', user = current_user, account = current_user.is_authenticated, username = current_user.name)
+    return flask.redirect('/')

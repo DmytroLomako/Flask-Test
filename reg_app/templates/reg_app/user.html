@@ -1,0 +1,19 @@
+{% extends 'base.html' %}
+
+{% block title %}
+    User
+{% endblock %}
+
+{% block links %}
+    <link rel="stylesheet" href="{{ url_for('reg_app.static',filename='reg_app/css/user.css') }}">
+{% endblock %}
+
+{% block content %}
+    <h1>User: {{user.name}}</h1>
+    <h3>Reviews:</h3>
+    {% for review in user.reviews %}
+        <h4>Product - {{ review.product.name }} {{ review.raiting }}★</h4>
+        <h5>{{ review.text }}</h5>
+        <hr>
+    {% endfor %}
+{% endblock %}

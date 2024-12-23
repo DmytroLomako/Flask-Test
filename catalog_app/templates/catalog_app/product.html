@@ -16,6 +16,9 @@
     <div class="reviews">
         <h1>Reviews:</h1>
         {% for review in product.reviews %}
+            {% if review.user %}
+                <h2>Author: {{ review.user.name }}</h2>
+            {% endif %}
             <h2>Rating: {{ review.raiting }}★</h2>
             <h5>{{ review.text }}</h5>
             <hr>

@@ -36,6 +36,8 @@ def render_product(product_id):
         text = flask.request.form['review']
         rating = flask.request.form['rating']
         review = Review(text = text,raiting = rating, product_id = product_id)
+        if current_user.is_authenticated:
+            review.user_id = current_user.id
         database.session.add(review)
         database.session.commit()
     return flask.render_template('catalog_app/product.html', account = current_user.is_authenticated, product = product, username = get_user(current_user))

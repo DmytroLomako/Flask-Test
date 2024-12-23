@@ -20,4 +20,5 @@ class Review(database.Model):
     id = database.Column(database.Integer, primary_key = True)
     text = database.Column(database.String)
     raiting = database.Column(database.Integer)
+    user_id = database.Column(database.Integer, database.ForeignKey('user.id', name = 'review_user'))
     product_id = database.Column(database.Integer, database.ForeignKey('product.id'))
