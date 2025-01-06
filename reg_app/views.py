@@ -34,6 +34,11 @@ def render_logout():
     return flask.redirect('/')
 
 def render_user():
+    if flask.request.method == 'POST':
+        user = User.query.get(current_user.id)
+        flask_login.logout_user()
+        database.session.delete(user)
+        database.session.commit()
     if current_user.is_authenticated:
         return flask.render_template('reg_app/user.html', user = current_user, account = current_user.is_authenticated, username = current_user.name)
     return flask.redirect('/')
