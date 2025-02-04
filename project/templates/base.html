@@ -14,6 +14,10 @@
         <header class="links">
             <a href="/">HOME</a>
             <a href="/catalog/">CATALOG</a>
+            <a href="/cart/">CART</a>
+            {% if account and user.is_admin %}
+                <a href="/admin/">ADMIN</a>
+            {% endif %}
             <div class="user">
                 {% if account %}
                     <a href="/user/">{{ username }}</a>

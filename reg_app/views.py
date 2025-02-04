@@ -13,7 +13,7 @@ def render_reg():
         database.session.add(user)
         database.session.commit()
         return flask.redirect('/auth/')
-    return flask.render_template('reg_app/reg.html', title = 'Registration', account = current_user.is_authenticated)
+    return flask.render_template('reg_app/reg.html', title = 'Registration', account = current_user.is_authenticated, user=current_user)
 
 def render_log():
     if flask_login.current_user.is_authenticated:
@@ -27,7 +27,7 @@ def render_log():
             return flask.redirect('/')
         else:
             return 'Неверные данные'
-    return flask.render_template('reg_app/reg.html', title = 'Authorization', account = current_user.is_authenticated)
+    return flask.render_template('reg_app/reg.html', title = 'Authorization', account = current_user.is_authenticated, user=current_user)
 
 def render_logout():
     flask_login.logout_user()
