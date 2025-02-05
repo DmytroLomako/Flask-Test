@@ -18,6 +18,18 @@ def render_admin():
                         print(f'image {product.image} not found')
                     database.session.delete(product)
                     database.session.commit()
+                elif 'type' in flask.request.form:
+                    product_id = flask.request.form['id']
+                    product = Product.query.get(product_id)
+                    type = flask.request.form['type']
+                    text = flask.request.form['text']
+                    if type == 'name':
+                        product.name = text
+                    elif type == 'price':
+                        product.price = text
+                    elif type == 'description':
+                        product.description = text
+                    database.session.commit()
                 else:
                     name = flask.request.form['name']
                     price = flask.request.form['price']
